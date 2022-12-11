@@ -1,0 +1,20 @@
+.navbar, .navbar ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0 25px;
+}
+.navbar {
+  border-bottom: 1px solid rgba(97, 97, 97, 0.5);
+}
+
+.navbar li {
+  list-style-type: none;
+  padding: 10px;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:visited {
+  color: black;
+}
