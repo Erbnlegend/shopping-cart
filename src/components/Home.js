@@ -2,9 +2,10 @@ import React from 'react'
 import HotPick from './HotPicks'
 import propTypes from 'prop-types'
 import SearchResults from './SearchResults'
+import Favorites from './Favorites'
 
 const Home = (props) => {
-  const { hot, search } = props
+  const { hot, search, favorites, favesIsShown } = props
 
   const searchLength = search.length
 
@@ -12,7 +13,6 @@ const Home = (props) => {
     return (
         <HotPick className='card' key={index}
           hot={item}
-          search={search}
           addToCart={props.addToCart}
           addToFavorites={props.addToFavorites}
           favorites={props.favorites}
@@ -31,16 +31,32 @@ const Home = (props) => {
     )
   })
 
+  const favesMap = favorites.map((item, index) => {
+    return (
+        <Favorites className='card' key={index}
+          item={item}
+          addToCart={props.addToCart}
+          addToFavorites={props.addToFavorites}
+          favorites={props.favorites}
+        />
+    )
+  })
+
   return (
     <div>
-      {searchLength <= 0 &&
+      {searchLength <= 0 && !favesIsShown &&
         <div className='cards'>
           {hotMap}
         </div>
       }
-      {searchLength > 0 &&
+      {searchLength > 0 && !favesIsShown &&
         <div className='cards'>
           {searchMap}
+        </div>
+      }
+      {favesIsShown &&
+        <div className='cards'>
+          {favesMap}
         </div>
       }
     </div>
@@ -52,7 +68,8 @@ Home.propTypes = {
   search: propTypes.array,
   addToCart: propTypes.func,
   addToFavorites: propTypes.func,
-  favorites: propTypes.array
+  favorites: propTypes.array,
+  favesIsShown: propTypes.bool
 }
 
 export default Home

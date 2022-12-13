@@ -11,7 +11,6 @@
 
 .navbar .logo {
   font-size: 1.4rem;
-  color: var(--logo-color);
 }
 
 .navbar .location {
@@ -26,7 +25,7 @@
   text-decoration: none;
 }
 .navbar a:visited {
-  color: black;
+  color: inherit;
 }
 
 .navbar .phone {

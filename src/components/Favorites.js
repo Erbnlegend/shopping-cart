@@ -2,8 +2,8 @@ import React from 'react'
 import { Heart } from 'lucide-react'
 import propTypes from 'prop-types'
 
-const SearchResults = (props) => {
-  const { id, title, price, description, image } = props.search
+const Favorites = (props) => {
+  const { id, title, price, description, image } = props.item
 
   const faves = props.favorites.map(item => (item.id))
 
@@ -52,11 +52,11 @@ const SearchResults = (props) => {
   )
 }
 
-SearchResults.propTypes = {
-  search: propTypes.array,
+Favorites.propTypes = {
   addToCart: propTypes.func,
   addToFavorites: propTypes.func,
-  favorites: propTypes.array
+  favorites: propTypes.array,
+  item: propTypes.object
 }
 
-export default SearchResults
+export default Favorites

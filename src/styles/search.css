@@ -5,6 +5,7 @@
 }
 
 .searchField .searchContainer {
+  background-color: white;
   display: flex;
   align-items: center;
   width: 30%;
@@ -32,3 +33,9 @@
 .searchField .searchIcon {
   color: var(--border-color)
 }
+
+@media screen and (max-width: 825px) {
+  .searchField .searchContainer {
+    width: 70%;
+  }
+  }

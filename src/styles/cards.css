@@ -1,11 +1,11 @@
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 }
 
 .card {
   position: relative;
-  border: 1px solid var(--border-color);
+  box-shadow: 0 1px 3px #000;
   border-radius: var(--border-radius);
   margin: 5px;
   padding: 15px;
@@ -42,19 +42,23 @@
   margin: 5px;
   padding: 5px;
   border: 1px solid var(--border-color);
-  border-radius: var(--border-radius)
+  border-radius: var(--border-radius);
 }
 
 .card .addCart {
-  width: 100%;
-  background-color: white;
-  border-top: 1px solid var(--border-color);
+  width: 80%;
+  font-weight: bold;
+  display: block;
+  margin: 0 auto;
+  border-radius: var(--border-radius);
+  background-color: var(--logo-color);
+  border: none;
   padding: 5px;
   transition-duration: var(--transition-time);
 }
 
 .card .addCart:hover {
-  background-color: var(--logo-color);
+  box-shadow: 0 1px 3px #000;
 }
 
 .card img {

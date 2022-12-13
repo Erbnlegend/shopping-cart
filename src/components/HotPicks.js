@@ -22,7 +22,15 @@ const HotPick = (props) => {
     props.addToCart(newCartItem)
   }
 
-  const [newFavItem, setNewFavItem] = React.useState({ id })
+  const [newFavItem, setNewFavItem] = React.useState(
+    {
+      id,
+      title,
+      price,
+      description,
+      image
+    }
+  )
 
   function addFaves () {
     setNewFavItem(newFavItem)

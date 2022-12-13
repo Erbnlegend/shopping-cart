@@ -8,7 +8,7 @@ const Cart = (props) => {
 
   const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0)
 
-  const [subTotal, setSubTotal] = React.useState(total)
+  // const [subTotal, setSubTotal] = React.useState(total)
 
   const cartMap = cart.map((item, index) => {
     return (

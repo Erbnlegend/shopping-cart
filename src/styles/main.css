@@ -1,8 +1,8 @@
 :root {
-  --border-color: rgba(97, 97, 97, 0.5);
+  --border-color: #61616180;
   --border-radius: 5px;
   --logo-color: rgba(69, 209, 139, 0.603);
-  --transition-time: .2s;
+  --transition-time: .1s;
   --main-padding: 15px;
 }
 
@@ -14,15 +14,17 @@
 
 .continue {
   background-color: white;
-  border-top: 1px solid var(--border-color);
+  border: none;
+  box-shadow: 0 1px 3px #000;
   padding: 10px;
   transition-duration: var(--transition-time);
 }
 
 .checkout {
   background-color: var(--logo-color);
+  box-shadow: 0 1px 3px #000;
   margin-right: var(--main-padding);
-  border-top: 1px solid var(--border-color);
+  border: none;
   padding: 10px;
   transition-duration: var(--transition-time);
 }
@@ -39,6 +41,6 @@
 .searchIcon {
   padding: 5px;
 }
-.searchIcon:hover {
+.searchIcon:hover, .dark:hover {
   cursor: pointer;
 }

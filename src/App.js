@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Navbar from '~/components/Navbar'
 import About from '~/components/About'
@@ -17,6 +17,21 @@ const App = () => {
   const [cart, setCart] = React.useState([])
   // Favorites State
   const [favorites, setFavorites] = React.useState([])
+  const [favesIsShown, setfavesIsShown] = React.useState(false)
+
+  // Dark Mode
+  const [theme, setTheme] = React.useState('dark')
+
+  const toggleTheme = () => {
+    if (theme === 'dark') {
+      setTheme('light')
+    } else {
+      setTheme('dark')
+    }
+  }
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
 
   const addToCart = (addedProduct) => {
     const findItem = cart.filter(item => item.id === addedProduct.id)
@@ -64,30 +79,24 @@ const App = () => {
     }
   }
 
-  // Issue with passing down the data to the component
-  // Limits the data being sent back up the tree
   const showFaves = () => {
-    const filterFaves = favorites.map(item => (item.id))
-    const filterProducts = products.filter(item => filterFaves.includes(item.id))
-    // Find another way!
-    setProducts(filterProducts)
-  }
-
-  const resetFaves = () => {
-    // Wind another Way!
-    setProducts(data)
+    setfavesIsShown(!favesIsShown)
   }
 
   return (
+    <div className={theme}>
       <BrowserRouter>
         <Navbar
           cart={cart}
+          toggleTheme={toggleTheme}
+          theme={theme}
         />
         <SearchField
           products={products}
-          showFaves={showFaves}
-          resetFaves={resetFaves}
+          favorites={favorites}
           setSearch={setSearch}
+          showFaves={showFaves}
+          theme={theme}
           />
         <div className='main'>
           <Routes>
@@ -97,16 +106,21 @@ const App = () => {
               addToFavorites={addToFavorites}
               favorites={favorites}
               search={search}
+              showFaves={showFaves}
+              favesIsShown={favesIsShown}
+              theme={theme}
             />} />
             <Route path='about' element={<About />} />
             <Route path='cart' element={<Cart
               cart={cart}
               updateCart={updateCart}
               favorites={favorites}
+              theme={theme}
             />} />
           </Routes>
         </div>
       </BrowserRouter>
+    </div>
   )
 }
 

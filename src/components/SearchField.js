@@ -33,17 +33,15 @@ const SearchField = (props) => {
 
   function resetToggle () {
     setToggle(!toggle)
-    if (toggle) props.showFaves()
-    if (!toggle) props.resetFaves()
+    props.showFaves()
   }
 
   return (
     <div className='searchField'>
-      <div className='searchContainer' >
+      <div className={`searchContainer ${props.theme}`} >
         {toggle ? <Heart fill='red' className='searchIcon' onClick={resetToggle}/> : <Heart className='searchIcon' onClick={resetToggle}/> }
       <input
         placeholder='Search...'
-        onClick={props.resetFaves}
         onChange={searchFieldData}
       />
       <Search className='searchIcon'/>
@@ -54,10 +52,12 @@ const SearchField = (props) => {
 
 SearchField.propTypes = {
   products: propTypes.array,
+  favorities: propTypes.array,
   showFaves: propTypes.func,
   resetFaves: propTypes.func,
   searchFieldData: propTypes.func,
-  searchResults: propTypes.func
+  searchResults: propTypes.func,
+  setSearch: propTypes.func
 }
 
 export default SearchField

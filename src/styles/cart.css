@@ -30,8 +30,6 @@
 }
 
 .cart-cards {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(300px, 1fr));
   width: 60%;
 }
 

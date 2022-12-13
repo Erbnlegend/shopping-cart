@@ -7,6 +7,7 @@ import './styles/navbar.css'
 import './styles/search.css'
 import './styles/cards.css'
 import './styles/cart.css'
+import './styles/theme.css'
 import App from './App'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
