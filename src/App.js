@@ -9,10 +9,13 @@ import SearchField from './components/SearchField'
 import data from './data/data'
 
 const App = () => {
+  // All Products
   const [products, setProducts] = React.useState(data)
-
+  // Search State
+  const [search, setSearch] = React.useState([])
+  // Cart State
   const [cart, setCart] = React.useState([])
-
+  // Favorites State
   const [favorites, setFavorites] = React.useState([])
 
   const addToCart = (addedProduct) => {
@@ -61,6 +64,20 @@ const App = () => {
     }
   }
 
+  // Issue with passing down the data to the component
+  // Limits the data being sent back up the tree
+  const showFaves = () => {
+    const filterFaves = favorites.map(item => (item.id))
+    const filterProducts = products.filter(item => filterFaves.includes(item.id))
+    // Find another way!
+    setProducts(filterProducts)
+  }
+
+  const resetFaves = () => {
+    // Wind another Way!
+    setProducts(data)
+  }
+
   return (
       <BrowserRouter>
         <Navbar
@@ -68,6 +85,9 @@ const App = () => {
         />
         <SearchField
           products={products}
+          showFaves={showFaves}
+          resetFaves={resetFaves}
+          setSearch={setSearch}
           />
         <div className='main'>
           <Routes>
@@ -76,6 +96,7 @@ const App = () => {
               addToCart={addToCart}
               addToFavorites={addToFavorites}
               favorites={favorites}
+              search={search}
             />} />
             <Route path='about' element={<About />} />
             <Route path='cart' element={<Cart

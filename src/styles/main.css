@@ -35,3 +35,10 @@
 .continue:hover {
   background-color: var(--logo-color);
 }
+
+.searchIcon {
+  padding: 5px;
+}
+.searchIcon:hover {
+  cursor: pointer;
+}

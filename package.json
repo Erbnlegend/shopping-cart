@@ -33,6 +33,7 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
+    "fuse.js": "^6.6.2",
     "html-webpack-plugin": "^5.5.0",
     "lucide-react": "^0.104.1",
     "normalize.css": "^8.0.1",

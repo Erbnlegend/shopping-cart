@@ -2,8 +2,8 @@ import React from 'react'
 import { Heart } from 'lucide-react'
 import propTypes from 'prop-types'
 
-const HotPick = (props) => {
-  const { id, title, price, description, image } = props.hot
+const SearchResults = (props) => {
+  const { id, title, price, description, image } = props.search
 
   const faves = props.favorites.map(item => (item.id))
 
@@ -28,6 +28,7 @@ const HotPick = (props) => {
     setNewFavItem(newFavItem)
     props.addToFavorites(newFavItem)
   }
+
   return (
     <div className='card'>
       <div className='info'>
@@ -43,11 +44,11 @@ const HotPick = (props) => {
   )
 }
 
-HotPick.propTypes = {
-  hot: propTypes.object,
+SearchResults.propTypes = {
+  search: propTypes.array,
   addToCart: propTypes.func,
   addToFavorites: propTypes.func,
   favorites: propTypes.array
 }
 
-export default HotPick
+export default SearchResults
