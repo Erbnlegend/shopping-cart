@@ -1,0 +1,37 @@
+:root {
+  --border-color: rgba(97, 97, 97, 0.5);
+  --border-radius: 5px;
+  --logo-color: rgba(69, 209, 139, 0.603);
+  --transition-time: .2s;
+  --main-padding: 15px;
+}
+
+.main {
+  width: 85%;
+  margin: 50px auto;
+  padding: 1%;
+}
+
+.continue {
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+  transition-duration: var(--transition-time);
+}
+
+.checkout {
+  background-color: var(--logo-color);
+  margin-right: var(--main-padding);
+  border-top: 1px solid var(--border-color);
+  padding: 10px;
+  transition-duration: var(--transition-time);
+}
+
+.container-flex {
+  display: flex;
+  align-items: center;
+}
+
+.continue:hover {
+  background-color: var(--logo-color);
+}

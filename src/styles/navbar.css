@@ -1,0 +1,54 @@
+.navbar {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.navbar, .navbar ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+}
+
+.navbar .logo {
+  font-size: 1.4rem;
+  color: var(--logo-color);
+}
+
+.navbar .location {
+  font-size: 1.2rem;
+}
+
+.navbar li {
+  list-style-type: none;
+  padding: 0 20px;
+}
+.navbar a {
+  text-decoration: none;
+}
+.navbar a:visited {
+  color: black;
+}
+
+.navbar .phone {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart .cartNumber {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  background-color: var(--logo-color);
+  height: 10px;
+  width: 10px;
+  left: 60%;
+  bottom: -35%;
+  font-size: .8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 100%;
+  padding: 4px;
+}

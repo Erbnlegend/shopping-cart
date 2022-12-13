@@ -1,18 +1,25 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
+import { Phone, LocateFixed, ShoppingBag } from 'lucide-react'
+import propTypes from 'prop-types'
 
-const Navbar = () => {
+const Navbar = (props) => {
+  const { cart } = props
   return (
     <div className='navbar'>
-      <h1><NavLink to='/'>ShopStuff</NavLink></h1>
+      <div className='logo'><NavLink to='/'>ShopStuff</NavLink></div>
       <ul>
-        <li><div className='location'>Location goes here</div></li>
-        <li className='phone'>111-111-1111</li>
+        <li className='location'><LocateFixed /></li>
         <li><NavLink to='about'>About</NavLink></li>
-        <li><NavLink to='cart'>Cart</NavLink></li>
+        <li className='cart'><NavLink to='cart'><ShoppingBag /><span className='cartNumber'>{cart.length}</span></NavLink></li>
+        <li className='phone'><Phone /></li>
       </ul>
     </div>
   )
+}
+
+Navbar.propTypes = {
+  cart: propTypes.array
 }
 
 export default Navbar

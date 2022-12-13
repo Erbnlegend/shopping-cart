@@ -1,0 +1,34 @@
+.searchField {
+  width: 100%;
+  margin-top: 0;
+  font-size: 1.1rem;
+}
+
+.searchField .searchContainer {
+  display: flex;
+  align-items: center;
+  width: 30%;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.searchField input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+}
+
+.searchField input:focus {
+  outline: none;
+
+}
+.searchField .searchContainer:focus {
+  border-color: rgb(49, 82, 116);
+}
+
+.searchField .searchIcon {
+  color: var(--border-color)
+}

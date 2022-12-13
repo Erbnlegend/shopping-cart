@@ -1,0 +1,116 @@
+.cartHead {
+  display: flex;
+}
+
+.subTotal {
+  margin: 5px;
+  width: 40%;
+}
+.cartHead h1 {
+  margin-right: var(--main-padding)
+}
+
+.checkout-border {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: var(--main-padding);
+  margin-bottom: var(--main-padding)
+}
+
+.checkout-totals {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--main-padding)
+}
+
+.total {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.cart-cards {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(300px, 1fr));
+  width: 60%;
+}
+
+.cart-card {
+  position: relative;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin: 5px;
+  padding: var(--main-padding);
+}
+
+.cart-card .info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart-card .options {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-card:hover {
+  box-shadow: 0 1px 3px #000;
+  transition-duration: var(--transition-time);
+}
+
+.cart-card-title {
+  width: 50%;
+  padding: var(--main-padding);
+  font-size: .8rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.cart-card-price {
+  text-align: center;
+  margin: 5px;
+  padding: var(--main-padding);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius)
+}
+
+.cart-card .addCart {
+  width: 100%;
+  background-color: white;
+  border-top: 1px solid var(--border-color);
+  padding: var(--main-padding);
+  transition-duration: var(--transition-time);
+}
+
+.cart-card .addCart:hover {
+  background-color: var(--logo-color);
+}
+
+.cart-card img {
+  width: 100px;
+  height: 100px;
+  padding: var(--main-padding);
+}
+
+.quantity-selector {
+  display: flex;
+  width: 25%;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media screen and (max-width: 825px) {
+  .cartHead {
+    display: block;
+  }
+  .subTotal {
+    width: 98%;
+  }
+  .cart-cards {
+    width: 100%;
+  }
+  }
