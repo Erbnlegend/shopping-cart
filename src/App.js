@@ -20,7 +20,7 @@ const App = () => {
   const [favesIsShown, setfavesIsShown] = React.useState(false)
 
   // Dark Mode
-  const [theme, setTheme] = React.useState('dark')
+  const [theme, setTheme] = React.useState('light')
 
   const toggleTheme = () => {
     if (theme === 'dark') {

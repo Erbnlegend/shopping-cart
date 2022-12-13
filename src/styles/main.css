@@ -41,6 +41,6 @@
 .searchIcon {
   padding: 5px;
 }
-.searchIcon:hover, .dark:hover {
+.searchIcon:hover, .moon:hover {
   cursor: pointer;
 }

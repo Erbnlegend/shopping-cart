@@ -90,7 +90,6 @@
 .cart-card img {
   width: 100px;
   height: 100px;
-  padding: var(--main-padding);
 }
 
 .quantity-selector {
