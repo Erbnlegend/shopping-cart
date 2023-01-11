@@ -1,15 +1,24 @@
+@import './navbar.css';
+@import './search.css';
+@import './cards.css';
+@import './cart.css';
+@import './theme.css';
+@import './hero.css';
+
 :root {
   --border-color: #61616180;
-  --border-radius: 5px;
-  --logo-color: rgba(69, 209, 139, 0.603);
+  --logo-color: rgba(200, 209, 200, 0.9);
   --transition-time: .1s;
   --main-padding: 15px;
 }
 
 .main {
-  width: 85%;
-  margin: 50px auto;
-  padding: 1%;
+  width: 100%;
+  margin: 0 auto;
+}
+.about {
+  width: 65%;
+  margin: 5% auto;
 }
 
 .continue {

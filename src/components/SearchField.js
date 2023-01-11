@@ -38,7 +38,7 @@ const SearchField = (props) => {
 
   return (
     <div className='searchField'>
-      <div className={`searchContainer ${props.theme}`} >
+      <div className={'searchContainer'} >
         {toggle ? <Heart fill='red' className='searchIcon' onClick={resetToggle}/> : <Heart className='searchIcon' onClick={resetToggle}/> }
       <input
         placeholder='Search...'

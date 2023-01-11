@@ -20,7 +20,8 @@ const Navbar = (props) => {
 }
 
 Navbar.propTypes = {
-  cart: propTypes.array
+  cart: propTypes.array,
+  toggleTheme: propTypes.func
 }
 
 export default Navbar

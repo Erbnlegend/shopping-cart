@@ -1,42 +1,32 @@
 .dark {
   background-color: rgb(21, 25, 34);
   color: #fff;
+  &img {
+    border-radius: 15px;
+    border: 5px solid rgb(117, 116, 116);
+    box-shadow: 0 0 1px 3px rgb(48, 47, 47);
+  }
+  & .card, & .cart-card {
+    background-color: rgb(17, 20, 24);
+  }
+  & .addCart {
+    color: rgba(255, 255, 255, 0.74);
+  }
+  & .logo {
+    color: rgba(255, 255, 255, 0.74);
+  }
+  & .continue {
+    background-color: rgb(34, 42, 53);
+    color: white;
+  }
+  & .continue:hover {
+    background-color: rgb(34, 42, 53);
+    box-shadow: 0 0 1px 3px rgb(48, 47, 47);
+    color: white;
+  }
 }
 
 .light {
   background-color: #fff;
   color: #333;
- }
-
- .dark .card, .dark .cart-card {
-  background-color: rgb(17, 20, 24);
- }
-
- .dark .addCart {
-  color: rgba(255, 255, 255, 0.74);
- }
-
- .dark .logo {
-  color: rgba(255, 255, 255, 0.74);
- }
-
- .dark .searchField .searchContainer, .dark .searchField input {
-  background-color: rgb(97, 100, 117);
- }
-
- .dark img {
-  border-radius: 15px;
-  border: 5px solid rgb(117, 116, 116);
-  box-shadow: 0 0 1px 3px rgb(48, 47, 47);
- }
-
- .dark .continue {
-  background-color: rgb(34, 42, 53);
-  color: white;
- }
-
- .dark .continue:hover {
-  background-color: rgb(34, 42, 53);
-  box-shadow: 0 0 1px 3px rgb(48, 47, 47);
-  color: white;
  }

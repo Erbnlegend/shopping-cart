@@ -44,6 +44,13 @@ const Home = (props) => {
 
   return (
     <div>
+    <div className='hero'>
+    <div className='callToAction'>
+      Sign up to receive free shipping on your first order!
+      <button>Sign up</button>
+    </div>
+  </div>
+    <div>
       {searchLength <= 0 && !favesIsShown &&
         <div className='cards'>
           {hotMap}
@@ -59,6 +66,7 @@ const Home = (props) => {
           {favesMap}
         </div>
       }
+    </div>
     </div>
   )
 }
