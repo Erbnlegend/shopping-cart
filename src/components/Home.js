@@ -3,6 +3,7 @@ import HotPick from './HotPicks'
 import propTypes from 'prop-types'
 import SearchResults from './SearchResults'
 import Favorites from './Favorites'
+import Footer from './Footer'
 
 const Home = (props) => {
   const { hot, search, favorites, favesIsShown } = props
@@ -47,7 +48,7 @@ const Home = (props) => {
     <div className='hero'>
     <div className='callToAction'>
       Sign up to receive free shipping on your first order!
-      <button>Sign up</button>
+      <a href='#'><button>Sign up</button></a>
     </div>
   </div>
     <div>
@@ -67,6 +68,7 @@ const Home = (props) => {
         </div>
       }
     </div>
+    <Footer />
     </div>
   )
 }

@@ -82,7 +82,7 @@ const App = () => {
   const showFaves = () => {
     setfavesIsShown(!favesIsShown)
   }
-
+  const path = process.env.NODE_ENV === 'development' ? '/' : '/projects/shoppingCart'
   return (
     <div className={theme}>
       <BrowserRouter>
@@ -100,7 +100,7 @@ const App = () => {
           />
         <div className='main'>
           <Routes>
-            <Route path='/' element={<Home
+            <Route path={ path } element={<Home
               hot={products}
               addToCart={addToCart}
               addToFavorites={addToFavorites}
@@ -110,8 +110,8 @@ const App = () => {
               favesIsShown={favesIsShown}
               theme={theme}
             />} />
-            <Route path='about' element={<About />} />
-            <Route path='cart' element={<Cart
+            <Route path={`${path}/about`} element={<About />} />
+            <Route path={`${path}/cart`} element={<Cart
               cart={cart}
               updateCart={updateCart}
               favorites={favorites}

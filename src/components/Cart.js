@@ -19,12 +19,14 @@ const Cart = (props) => {
     )
   })
 
+  const path = process.env.NODE_ENV === 'development' ? '/' : '/projects/shoppingCart'
+
   return (
     <div className='cartHead'>
       <div className='cart-cards'>
         <div className='container-flex'>
           { cart.length < 1 ? <h1>Empty Cart</h1> : <h1>Cart</h1>}
-          <NavLink to='/'><button className='continue'>Continue Shopping</button></NavLink>
+          <NavLink to={ path }><button className='continue'>Continue Shopping</button></NavLink>
         </div>
         {cart.length > 0 &&
         <div>
@@ -55,7 +57,7 @@ const Cart = (props) => {
           </div>
         </div>
           <NavLink to='checkout'><button className='checkout'>Checkout</button></NavLink>
-          <NavLink to='/'><button className='continue'>Continue Shopping</button></NavLink>
+          <NavLink to={ path }><button className='continue'>Continue Shopping</button></NavLink>
       </div>
     </div>
   )

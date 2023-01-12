@@ -22,6 +22,7 @@
     top: 25%;
     padding: 30px;
     & button {
+      background-color: var(--logo-color);
       font-size: 1rem;
       box-shadow: 0 5px 5px 0px rgb(0,0,0);
       text-align: center;
@@ -30,6 +31,10 @@
       padding: 10px;
       width: 300px;
       margin-top: 15px;
+    }
+    & button:hover {
+      opacity: .9;
+
     }
   }
 }

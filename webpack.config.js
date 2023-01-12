@@ -1,64 +1,77 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
-module.exports = {
-  entry: {
-    bundle: './src/index.js'
-  },
-  output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
-  },
-  mode: 'development',
-  devtool: 'inline-source-map',
-  devServer: {
-    historyApiFallback: true
-  },
-  resolve: {
-    alias: {
-      '~': path.resolve(__dirname, './src')
+module.exports = (env, argv) => {
+  const ENV = argv.mode || 'development'
+  return {
+    entry: {
+      bundle: './src/index.js'
     },
-    modules: ['node_modules'],
-    extensions: ['.js', '.json']
-  },
-  optimization: {
-    runtimeChunk: 'single'
-  },
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/i,
-        use: ['babel-loader']
+    output: {
+      filename: '[name].js',
+      path: path.resolve(__dirname, ENV === 'development' ? 'dist' : 'dist/projects/shoppingCart'),
+      publicPath: '/'
+    },
+    mode: ENV,
+    devtool: ENV === 'production' ? undefined : 'inline-source-map',
+    devServer: {
+      historyApiFallback: true
+    },
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, './src')
       },
-      {
-        test: /.(p?css|postcss)$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          'postcss-loader'
-        ]
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'imgs/[name][ext]'
+      modules: ['node_modules'],
+      extensions: ['.js', '.json']
+    },
+    optimization: {
+      minimize: ENV === 'production',
+      runtimeChunk: 'single'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.(js|jsx)$/i,
+          use: ['babel-loader']
+        },
+        {
+          test: /.(p?css|postcss)$/,
+          use: [
+            {
+              loader: MiniCssExtractPlugin.loader,
+              options: {
+                publicPath: ''
+              }
+            },
+            'css-loader',
+            'postcss-loader'
+          ]
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif|webp)$/i,
+          type: 'asset/resource',
+          generator: {
+            filename: 'imgs/[name][ext]'
+          }
+        },
+        {
+          test: /.(html)$/,
+          type: 'asset/resource',
+          generator: {
+            filename: '[name][ext]',
+            outputPath: './'
+          }
         }
-      },
-      {
-        test: /.(html)$/,
-        type: 'asset/resource',
-        generator: {
-          filename: '[name][ext]',
-          outputPath: './'
-        }
-      }
+      ]
+    },
+    plugins: [
+      new MiniCssExtractPlugin({
+        filename: 'styles.css'
+      }),
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: ENV
+      })
     ]
-  },
-  plugins: [
-    new MiniCssExtractPlugin({
-      filename: 'styles.css'
-    })
-  ]
+  }
 }

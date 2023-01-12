@@ -14,6 +14,8 @@
       height: 100px;
       margin: 15px;
       border: 5px solid white;
+      border-radius: 15px;
+      box-shadow: 0 0 2px 1px #000;
     }
     & .info {
       display: flex;
@@ -50,7 +52,8 @@
       transition-duration: var(--transition-time);
     }
     & .addCart:hover {
-      box-shadow: 0 0 1px 3px rgb(48, 47, 47);
+      opacity: .8;
+      cursor: pointer;
     }
   }
   & .card:hover {

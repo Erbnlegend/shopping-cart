@@ -7,7 +7,7 @@
 
 :root {
   --border-color: #61616180;
-  --logo-color: rgba(200, 209, 200, 0.9);
+  --logo-color: rgba(100, 209, 200, 0.9);
   --transition-time: .1s;
   --main-padding: 15px;
 }
@@ -19,6 +19,11 @@
 .about {
   width: 65%;
   margin: 5% auto;
+}
+.footer {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px auto;
 }
 
 .continue {
